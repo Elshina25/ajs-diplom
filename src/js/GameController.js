@@ -311,18 +311,16 @@ export default class GameController {
     this.gameState.userTurn = true;
     this.gameState.positions = [];
     this.userTeam.team.forEach((el) => el.levelUp());
-    const userGen = generateTeam(this.userCharacters, this.gameState.level, 2);
-    const botGen = generateTeam(this.botCharacters, this.gameState.level, this.userTeam.team.size);
 
     if (this.gameState.level === 2) {
-      this.userTeam.addAll(userGen);
-      this.botTeam.addAll(botGen);
+      this.userTeam.addAll(generateTeam(this.userCharacters, 2, 2));
+      this.botTeam.addAll(generateTeam(this.botCharacters, 2, this.userTeam.team.size));
     } if (this.gameState.level === 3) {
-      this.userTeam.addAll(userGen);
-      this.botTeam.addAll(botGen);
+      this.userTeam.addAll(generateTeam(this.userCharacters, 3, 2));
+      this.botTeam.addAll(generateTeam(this.botCharacters, 3, this.userTeam.team.size));
     } if (this.gameState.level === 4) {
-      this.userTeam.addAll(userGen);
-      this.botTeam.addAll(botGen);
+      this.userTeam.addAll(generateTeam(this.userCharacters, 4, 2));
+      this.botTeam.addAll(generateTeam(this.botCharacters, 4, this.userTeam.team.size));
     }
 
     GamePlay.showMessage(`Уровень ${this.gameState.level}`);
