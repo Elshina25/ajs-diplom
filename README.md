@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/sfc1a4oi1bj679jf/branch/main?svg=true)](https://ci.appveyor.com/project/Elshina25/ajs-diplom/branch/main)
+
 # Дипломное задание к курсу «Продвинутый JavaScript». Retro Game
 
 ###### tags: `netology` `advanced js`
