@@ -69,8 +69,8 @@ export default class GameController {
 
   // метод, возвращающий случайную позицию из списка возможных
   generatePosition(positions) {
-    const randomPosition = positions[Math.floor(Math.random() * positions.length)];
-    return randomPosition;
+    this.positions = positions;
+    return this.positions[Math.floor(Math.random() * positions.length)];
   }
 
   // метод привязывает персонажей к позициям и пушит в gameSate.positions
