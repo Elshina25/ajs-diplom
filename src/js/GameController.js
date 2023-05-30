@@ -294,13 +294,13 @@ export default class GameController {
   getResult() {
     if (this.userTeam.team.size === 0) {
       this.gameState.statistics.push(Math.round(this.gameState.points));
-      GamePlay.showMessage(`Вы проиграли! Количество набранных очков за игру: ${this.gameState.points}`);
+      GamePlay.showMessage(`Вы проиграли! Количество набранных очков за игру: ${Math.round(this.gameState.points)}`);
     } if (this.botTeam.team.size === 0 && this.gameState.level === 4) {
-      this.gameState.statistics.push(this.gameState.points);
-      GamePlay.showMessage(`Вы выиграли! Количество набранных очков за игру: ${this.gameState.points}, Ваш личный рекорд: ${Math.max(...this.gameState.statistics)}`);
+      this.gameState.statistics.push(Math.round(this.gameState.points));
+      GamePlay.showMessage(`Вы выиграли! Количество набранных очков за игру: ${Math.round(this.gameState.points)}, Ваш личный рекорд: ${Math.max(...this.gameState.statistics)}`);
     } if (this.botTeam.team.size === 0 && this.gameState.level <= 3) {
-      this.gameState.statistics.push(this.gameState.points);
-      GamePlay.showMessage(`Уровень ${this.gameState.level} пройден! Заработанные очки: ${this.gameState.points}`);
+      this.gameState.statistics.push(Math.round(this.gameState.points));
+      GamePlay.showMessage(`Уровень ${this.gameState.level} пройден! Заработанные очки: ${Math.round(this.gameState.points)}`);
       this.levelUpGame();
     }
   }
