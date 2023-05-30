@@ -293,7 +293,7 @@ export default class GameController {
   // вывод информации о набранных очках и передача ее в статистику
   getResult() {
     if (this.userTeam.team.size === 0) {
-      this.gameState.statistics.push(this.gameState.points);
+      this.gameState.statistics.push(Math.round(this.gameState.points));
       GamePlay.showMessage(`Вы проиграли! Количество набранных очков за игру: ${this.gameState.points}`);
     } if (this.botTeam.team.size === 0 && this.gameState.level === 4) {
       this.gameState.statistics.push(this.gameState.points);
